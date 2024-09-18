@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Admin Login</title>
+  <style>
+    /* CSS styling */
+    body {
+  text-align: center;
+  padding-top: 50px; /* Decreased the padding to move content closer to the image */
+  animation: fade-in 1s ease-in;
+  background-color: #b3c0c4;
+  background-image: url("https://img.freepik.com/free-photo/arrangement-leftover-wasted-food-cans-veggies_23-2148764784.jpg");
+  background-size: cover; /* Changed from 'contain' to 'cover' */
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100vh; /* Set the height to 100vh to fill the viewport */
+  margin: 0;
+}
+
+/* Additional styling for better visibility of content on top of the image */
+h1 {
+  color: #0f0f0f; /* White text color */
+  font-size: 48px; /* Larger font size */
+  padding: 20px; /* Add padding for readability */
+  /*background-color: rgba(247, 240, 240, 0.7); /* Semi-transparent black background for better contrast */
+  text-align: center;
+}
+
+    form {
+      display: inline-block;
+      background-color: #4c4747;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+
+    input[type="email"],
+    input[type="password"] {
+      padding: 10px;
+      margin-bottom: 10px;
+      width: 250px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    input[type="submit"] {
+      padding: 10px 20px;
+      background-color: #4caf50;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .error {
+      color: red;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Admin Login</h1>
+
+  <form id="loginForm" onsubmit="login(event)">
+    <input type="email" id="email" placeholder="Email" required><br>
+    <input type="password" id="password" placeholder="Password" required><br>
+    <span id="errorMessage" class="error"></span><br>
+    <input type="submit"  id="loginBtn"value="Login">
+  </form>
+
+  <script>
+    // JavaScript code
+    function login(event) {
+      event.preventDefault();
+
+      // Get form values
+      var email = document.getElementById('email').value;
+      var password = document.getElementById('password').value;
+      var errorMessage = document.getElementById('errorMessage');
+
+      // Check if email and password match
+      if (email === 'admin@fb.com' && password === 'foodbridge') {
+        // Redirect to the next page
+        window.location.href = 'Admin_page.html';
+      } else {
+        // Display error message
+        errorMessage.textContent = 'Invalid email or password';
+      }
+    }
+  </script>
+</body>
+</html>
